@@ -1,22 +1,82 @@
+.appHdr {
+  padding-left: 20px;
+  background-color: #177717;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.appTitle {
+  font-size: 3.5em;
+  font-family: Alegreya SC;
+  font-weight: bold;
+  color: #771747;
+  flex-grow: 1;
+  min-width: 450px;
+}
+
+.toolbar {
+  align-self: center;
+  flex-grow: 1;
+  align-content: center;
+}
+
+.filterButton {
+  float: right;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  margin-right: 30px;
+  height: 26px;
+  width: 26px;
+  background-image: url("../assets/filter_20x20.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: #cccccc solid 1px;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+  float: right;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 250px;
+  height: 25px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
 .locationBar {
   width: 20%;
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
   background-color: #60c360;
-  border-right: #177717 8px solid;
-  border-bottom: #177717 8px solid;
+  border-right: #177717 4px solid;
+  border-bottom: #177717 4px solid;
   color: #771747;
 }
 
 .map {
-  border-right: #177717 8px solid;
-  border-bottom: #177717 8px solid;
-  border-left: #177717 8px solid;
+  border-right: #177717 4px solid;
+  border-bottom: #177717 4px solid;
+  border-left: #177717 4px solid;
 }
 
 .locBarHdr {
-  font-size: 20px;
+  font-size: 1.4em;
   font-weight: bold;
   margin: 5px 10px 5px 0;
 }
@@ -28,7 +88,7 @@
 }
 
 .showBorder {
-  border: red 0px solid;
+
 }
 
 .address {
@@ -41,27 +101,6 @@
   font-size: 1.4em;
   text-align: center;
   margin-top: 10px;
-}
-
-#pac-container {
-  padding-bottom: 12px;
-  margin-right: 12px;
-  float: right;
-}
-
-#pac-input {
-  background-color: #fff;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-  margin-left: 12px;
-  padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
-  width: 400px;
-}
-
-#pac-input:focus {
-  border-color: #4d90fe;
 }
 
 .filterPop {
@@ -80,13 +119,28 @@
   margin-bottom: 20px;
   width: 300px;
   max-height: 500px;
+  border: #60c360 2px solid;
 }
 
-.filterButton {
+.amenHdr {
+  display: flex;
+  flex-flow: row;
+}
+
+.amenTitle {
+  font-size: 1.8em;
+  flex-grow: 1;
+}
+
+.amenClose {
   float: right;
   cursor: pointer;
-  background-color: white;
-  color: black;
+  font-size: 1.1em;
+}
+
+.amenRow {
+  height: 30px;
+  font-size: 1.2em;
 }
 
 /* The switch - the box around the slider */
@@ -94,7 +148,8 @@
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 28px;
+  float: right;
 }
 
 /* Hide default HTML checkbox */
@@ -120,17 +175,17 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
+  height: 25px;
   width: 26px;
   left: 4px;
-  bottom: 4px;
+  bottom: 2px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #177717;
 }
 
 input:focus + .slider {
@@ -145,7 +200,7 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 24px;
 }
 
 .slider.round:before {

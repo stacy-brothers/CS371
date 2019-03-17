@@ -1,11 +1,13 @@
 <div style="display: flex; flex-flow: column nowrap; height: 98vh; width: 100%; margin-left: 4px">
-  <div style="padding-left: 20px; background-color: #177717">
-    <div style="font-size: 3.5em; font-family: Alegreya SC; font-weight: bold; color: #771747">
+  <div class="appHdr">
+    <div class="appTitle">
       Station Locator
     </div>
-    <div class="filterButton" (click)="openFilter()">filter</div>
-    <div id="pac-container">
-      <input id="pac-input" type="text" class="fa fa-search" placeholder="Enter a location">
+    <div class="toolbar">
+      <div class="filterButton" (click)="openFilter()"></div>
+      <div id="pac-container">
+        <input id="pac-input" type="text" class="fa fa-search" placeholder="Enter a location">
+      </div>
     </div>
   </div>
   <div style="flex-grow: 1; display: flex; flex-flow: row nowrap">
@@ -23,54 +25,53 @@
   </div>
 </div>
 
-<div #searchDiv >
-  <div class="filterButton" (click)="openFilter()">filter</div>
-  <div id="pac-container">
-    <input id="pac-input" type="text" class="fa fa-search" placeholder="Enter a location">
-  </div>
-</div>
-
 <div class="filterPop" #filterPop >
-  <div class="amenHdr"><div class="amenTitle">Amenities</div><div style="float: right; cursor: pointer" (click)="closeFilter()">X</div>
+  <div class="amenHdr">
+    <div class="amenTitle">Amenities Filter</div>
+    <div class="amenClose" style="" (click)="closeFilter()">X</div>
+  </div>
+  <div style="height: 25px"></div>
   <div>
-    <div>
+    <div class="amenRow">
       Freal Shakes
       <label class="switch">
         <input (change)="toggleFilter('freal')" type="checkbox">
         <span class="slider round"></span>
       </label>
     </div>
-    <div>slushie
+    <div class="amenRow">Slushies
       <label class="switch">
         <input (change)="toggleFilter('slushie')" type="checkbox">
         <span class="slider round"></span>
       </label>
     </div>
-    <div>madbrook
+    <div class="amenRow">Madbrook Donuts
       <label class="switch">
         <input (change)="toggleFilter('madbrook')" type="checkbox">
         <span class="slider round"></span>
       </label>
     </div>
-    <div>diesel
+    <div style="height: 25px"></div>
+    <div class="amenRow">Diesel Fuel
       <label class="switch">
         <input (change)="toggleFilter('diesel')" type="checkbox">
         <span class="slider round"></span>
       </label>
     </div>
-    <div>clear
+    <div class="amenRow">Ethenol Free Fuel
       <label class="switch">
         <input (change)="toggleFilter('clear')" type="checkbox">
         <span class="slider round"></span>
       </label>
     </div>
-    <div>rvdump
+    <div style="height: 25px"></div>
+    <div class="amenRow">RV Dump
       <label class="switch">
         <input (change)="toggleFilter('rvdump')" type="checkbox">
         <span class="slider round"></span>
       </label>
     </div>
-    <div>rvlane
+    <div class="amenRow">RV Lanes
       <label class="switch">
         <input (change)="toggleFilter('rvlane')" type="checkbox">
         <span class="slider round"></span>

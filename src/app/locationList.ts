@@ -6,6 +6,7 @@ export class Location {
   state: string;
   zip: string;
   phone: string;
+  price: string;
   lat: number;
   long: number;
   freal: boolean;
@@ -26,6 +27,7 @@ const locationList: Location[] = [
     state: 'UT',
     zip: '84123',
     phone: '801-123-4567',
+    price: '$2.13',
     lat: 41.092964,
     long: -111.998218,
     freal: true,
@@ -44,6 +46,7 @@ const locationList: Location[] = [
     state: 'UT',
     zip: '84122',
     phone: '801-123-7654',
+    price: '$2.23',
     lat: 41.118056,
     long: -112.044772,
     freal: true,

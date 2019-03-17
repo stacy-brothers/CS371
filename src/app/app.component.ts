@@ -10,7 +10,6 @@ import {locationList, Location} from './locationList';
 export class AppComponent implements OnInit  {
   @ViewChild('gmap') gmapElement: any;
   @ViewChild('filterPop') filterPop: any;
-  @ViewChild('searchDiv') searchDiv: any;
   map: google.maps.Map;
 
   currentLat = 0;
@@ -27,7 +26,7 @@ export class AppComponent implements OnInit  {
     clear: false,
     rvdump: false,
     rvlane: false
-  }
+  };
 
   constructor(
     private ngZone: NgZone
@@ -47,8 +46,6 @@ export class AppComponent implements OnInit  {
         this.showPosition(position);
       });
     }
-    this.searchDiv.index = 1;
-    //this.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(this.searchDiv);
     this.loadLocations();
 
     const widgetNode = <HTMLInputElement> document.getElementById('pac-input');
@@ -90,7 +87,8 @@ export class AppComponent implements OnInit  {
         const newMark = new google.maps.Marker({
           position: newLoc,
           map: this.map,
-          icon: 'assets/gas_pinlet-2-medium_1_5.png'
+          icon: 'assets/gas_pinlet-2-medium_1_5.png',
+          label: loc.price
         });
         newMark.addListener('click', this.selectLocation.bind(this, newMark, a) );
         newMark.setVisible(true);
