@@ -1,9 +1,80 @@
-<div>
-  <h1>
-    Station Locator
-  </h1>
-</div>
-<div>
-  <div #gmap style="height: 100vh; width: 100%"></div>
+<div style="display: flex; flex-flow: column nowrap; height: 98vh; width: 100%; margin-left: 4px">
+  <div style="padding-left: 20px; background-color: #177717">
+    <div style="font-size: 3.5em; font-family: Alegreya SC; font-weight: bold; color: #771747">
+      Station Locator
+    </div>
+    <div class="filterButton" (click)="openFilter()">filter</div>
+    <div id="pac-container">
+      <input id="pac-input" type="text" class="fa fa-search" placeholder="Enter a location">
+    </div>
+  </div>
+  <div style="flex-grow: 1; display: flex; flex-flow: row nowrap">
+    <div class="map" #gmap style="height: 100%; width: 100%; flex-grow: 5"></div>
+    <div class="locationBar" *ngIf='showLocBar'>
+      <div class="showBorder locBarHdr"><a style="float: right; cursor: pointer" (click)="closeLocBar()">X</a></div>
+      <div class="showBorder locName">{{selectedLoc.name}}</div>
+      <div class="showBorder address">
+        <div>{{selectedLoc.street}}</div>
+        <div>{{selectedLoc.city}}, {{selectedLoc.state}} {{selectedLoc.zip}}</div>
+      </div>
+      <div class="showBorder phone">{{selectedLoc.phone}}</div>
+
+    </div>
+  </div>
 </div>
 
+<div #searchDiv >
+  <div class="filterButton" (click)="openFilter()">filter</div>
+  <div id="pac-container">
+    <input id="pac-input" type="text" class="fa fa-search" placeholder="Enter a location">
+  </div>
+</div>
+
+<div class="filterPop" #filterPop >
+  <div class="amenHdr"><div class="amenTitle">Amenities</div><div style="float: right; cursor: pointer" (click)="closeFilter()">X</div>
+  <div>
+    <div>
+      Freal Shakes
+      <label class="switch">
+        <input (change)="toggleFilter('freal')" type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div>slushie
+      <label class="switch">
+        <input (change)="toggleFilter('slushie')" type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div>madbrook
+      <label class="switch">
+        <input (change)="toggleFilter('madbrook')" type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div>diesel
+      <label class="switch">
+        <input (change)="toggleFilter('diesel')" type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div>clear
+      <label class="switch">
+        <input (change)="toggleFilter('clear')" type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div>rvdump
+      <label class="switch">
+        <input (change)="toggleFilter('rvdump')" type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div>rvlane
+      <label class="switch">
+        <input (change)="toggleFilter('rvlane')" type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+</div>
