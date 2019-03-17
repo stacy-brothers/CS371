@@ -10,17 +10,31 @@
       </div>
     </div>
   </div>
-  <div style="flex-grow: 1; display: flex; flex-flow: row nowrap">
+  <div style="flex-grow: 1; display: flex; flex-flow: row nowrap; text-align: center">
     <div class="map" #gmap style="height: 100%; width: 100%; flex-grow: 5"></div>
     <div class="locationBar" *ngIf='showLocBar'>
-      <div class="showBorder locBarHdr"><a style="float: right; cursor: pointer" (click)="closeLocBar()">X</a></div>
-      <div class="showBorder locName">{{selectedLoc.name}}</div>
-      <div class="showBorder address">
+      <div class="locBarHdr"><a style="float: right; cursor: pointer" (click)="closeLocBar()">X</a></div>
+      <div class="locName">{{selectedLoc.name}}</div>
+      <div class="address">
         <div>{{selectedLoc.street}}</div>
         <div>{{selectedLoc.city}}, {{selectedLoc.state}} {{selectedLoc.zip}}</div>
       </div>
-      <div class="showBorder phone">{{selectedLoc.phone}}</div>
-
+      <div class="phone">{{selectedLoc.phone}}</div>
+      <div style="height: 25px"></div>
+      <div class="price">{{selectedLoc.price}}</div>
+      <div class="priceType">Unleaded</div>
+      <div style="height: 25px"></div>
+      <div class="locAmenTitle">Amenities</div>
+      <div style="height: 5px"></div>
+      <div class="locAmenRow" *ngIf="selectedLoc.freal">Freal Shakes</div>
+      <div class="locAmenRow" *ngIf="selectedLoc.slushie">Slushies</div>
+      <div class="locAmenRow" *ngIf="selectedLoc.madbrook">Madbrook Donuts</div>
+      <div style="height: 5px"></div>
+      <div class="locAmenRow" *ngIf="selectedLoc.diesel">Diesel Fuel</div>
+      <div class="locAmenRow" *ngIf="selectedLoc.clear">Ethenol Free Fuel</div>
+      <div style="height: 5px"></div>
+      <div class="locAmenRow" *ngIf="selectedLoc.rvdump">RV Dump</div>
+      <div class="locAmenRow" *ngIf="selectedLoc.rvlane">RV Lanes</div>
     </div>
   </div>
 </div>

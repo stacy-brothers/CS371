@@ -93,14 +93,28 @@
 
 .address {
   font-size: 1.3em;
-  text-align: center;
   margin-top: 10px;
 }
 
 .phone {
   font-size: 1.4em;
-  text-align: center;
   margin-top: 10px;
+}
+
+.price {
+  font-size: 3.5em;
+}
+
+.priceType {
+  font-size: 1.2em;
+}
+
+.locAmenTitle {
+  font-size: 1.8em;
+}
+
+.locAmenRow {
+  font-size: 1.2em;
 }
 
 .filterPop {

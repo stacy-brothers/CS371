@@ -82,13 +82,24 @@ export class AppComponent implements OnInit  {
 
   loadLocations() {
     let a = 0;
+    const point = new google.maps.Point(60, 20);
+    const icon: google.maps.Icon = {
+      url: 'assets/gas_pinlet-2-medium_1_5.png',
+      labelOrigin: point
+    }
     locationList.forEach( loc => {
         const newLoc = new google.maps.LatLng(loc.lat, loc.long);
+
         const newMark = new google.maps.Marker({
           position: newLoc,
           map: this.map,
-          icon: 'assets/gas_pinlet-2-medium_1_5.png',
-          label: loc.price
+          icon: icon,
+          label: {
+            text: loc.price,
+            fontSize: '18px',
+            fontWeight: 'bold',
+          },
+
         });
         newMark.addListener('click', this.selectLocation.bind(this, newMark, a) );
         newMark.setVisible(true);
