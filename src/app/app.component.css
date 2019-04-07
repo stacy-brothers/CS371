@@ -4,44 +4,42 @@ body {
 
 .appHdr {
   padding-left: 20px;
-  background-color: #177717;
   display: flex;
   flex-flow: row;
   align-items: center;
   flex-wrap: wrap;
+  border: #177717 solid 4px;
 }
 
 .appTitle {
   font-size: 3.5em;
   font-family: Alegreya SC;
   font-weight: bold;
-  color: #771747;
+  color: #177717;
   flex-grow: 1;
   min-width: 450px;
 }
 
 .toolbar {
-  align-self: center;
   flex-grow: 1;
-  align-content: center;
 }
 
 .filterButton {
   float: right;
   cursor: pointer;
-  background-color: white;
-  color: black;
+  background-color: #771747;
+  color: white;
   margin-right: 30px;
-  height: 26px;
-  width: 26px;
-  background-image: url("../assets/filter_20x20.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: #cccccc solid 1px;
+  height: 27px;
+  line-height: 32px;
+  width: 27px;
+  border: #670727 solid 2px;
+  font-size: 1.1em;
+  text-align: center;
 }
 
 #pac-container {
-  padding-bottom: 12px;
+  padding-bottom: 0px;
   margin-right: 12px;
   float: right;
 }
@@ -56,6 +54,7 @@ body {
   text-overflow: ellipsis;
   width: 250px;
   height: 25px;
+  border: #177717 solid 3px;
 }
 
 #pac-input:focus {
@@ -67,10 +66,9 @@ body {
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
-  background-color: #60c360;
   border-right: #177717 4px solid;
   border-bottom: #177717 4px solid;
-  color: #771747;
+  color: #177717;
 }
 
 .map {
@@ -80,9 +78,15 @@ body {
 }
 
 .locBarHdr {
-  font-size: 1.4em;
-  font-weight: bold;
-  margin: 5px 10px 5px 0;
+  font-size: 2.2em;
+  background-color: #177717;
+  color: white;
+  padding-right: 10px;
+  line-height: 50px;
+}
+
+.locBarClose {
+  font-size: 0.7em;
 }
 
 .locName {
@@ -105,20 +109,42 @@ body {
   margin-top: 10px;
 }
 
+.fuelHdr {
+  font-size: 1.7em;
+  background-color: #177717;
+  color: white;
+}
+
 .price {
   font-size: 3.5em;
+
 }
 
 .priceType {
-  font-size: 1.2em;
+  font-size: 0.35em;
+}
+
+.locAmenList {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .locAmenTitle {
-  font-size: 1.8em;
+  font-size: 1.7em;
+  background-color: #177717;
+  color: white;
 }
 
 .locAmenRow {
   font-size: 1.2em;
+  width: 50%;
+  flex-grow: 1;
+  flex-basis: 40%;
+  text-align: left;
+  padding-left: 5px;
+  border-bottom: #177717 3px solid;
+  border-right: 3px solid;
+  line-height: 38px;
 }
 
 .filterPop {
@@ -129,7 +155,7 @@ body {
   bottom: 0;
   left: 0;
   z-index: 1000;
-  overflow: auto;
+  overflow: hidden;
   padding: 20px;
   background: #fff;
   margin: auto;
@@ -137,7 +163,7 @@ body {
   margin-bottom: 20px;
   width: 330px;
   max-height: 400px;
-  border: #60c360 2px solid;
+  border: #771747 2px solid;
 }
 
 .amenHdr {
@@ -151,9 +177,14 @@ body {
 }
 
 .amenClose {
-  float: right;
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: 1.2em;
+  background-color: #771747;
+  color: white;
+  border: #670727;
+  width: 120px;
+  height: 36px;
+  margin-top: 50px;
 }
 
 .amenRow {
@@ -203,7 +234,7 @@ body {
 }
 
 input:checked + .slider {
-  background-color: #177717;
+  background-color: #771747;
 }
 
 input:focus + .slider {

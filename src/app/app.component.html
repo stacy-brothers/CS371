@@ -1,10 +1,10 @@
 <div style="display: flex; flex-flow: column nowrap; height: 98vh; width: 100%; margin-left: 4px">
   <div class="appHdr">
     <div class="appTitle">
-      Station Locator
+      Shelvron Stations
     </div>
     <div class="toolbar">
-      <div class="filterButton" (click)="openFilter()"></div>
+      <div class="filterButton" (click)="openFilter()"><i class="fas fa-filter"></i></div>
       <div id="pac-container">
         <input id="pac-input" type="text" class="fa fa-search" placeholder="Enter a location">
       </div>
@@ -13,36 +13,34 @@
   <div style="flex-grow: 1; display: flex; flex-flow: row nowrap; text-align: center">
     <div class="map" #gmap style="height: 100%; width: 100%; flex-grow: 5"></div>
     <div class="locationBar" *ngIf='showLocBar'>
-      <div class="locBarHdr"><a style="float: right; cursor: pointer" (click)="closeLocBar()">X</a></div>
-      <div class="locName">{{selectedLoc.name}}</div>
+      <div class="locBarHdr">{{selectedLoc.name}}<a style="float: right; cursor: pointer" (click)="closeLocBar()"><i class="fas fa-window-close locBarClose"></i></a></div>
+
       <div class="address">
         <div>{{selectedLoc.street}}</div>
         <div>{{selectedLoc.city}}, {{selectedLoc.state}} {{selectedLoc.zip}}</div>
       </div>
       <div class="phone">{{selectedLoc.phone}}</div>
       <div style="height: 25px"></div>
-      <div class="price">{{selectedLoc.price}}</div>
-      <div class="priceType">Unleaded</div>
+      <div class="fuelHdr">Fuel Price</div>
+      <div class="price">{{selectedLoc.price}}<span class="priceType">Unleaded</span></div>
       <div style="height: 25px"></div>
       <div class="locAmenTitle">Amenities</div>
-      <div style="height: 5px"></div>
-      <div class="locAmenRow" *ngIf="selectedLoc.freal">Freal Shakes</div>
-      <div class="locAmenRow" *ngIf="selectedLoc.slushie">Slushies</div>
-      <div class="locAmenRow" *ngIf="selectedLoc.madbrook">Madbrook Donuts</div>
-      <div style="height: 5px"></div>
-      <div class="locAmenRow" *ngIf="selectedLoc.diesel">Diesel Fuel</div>
-      <div class="locAmenRow" *ngIf="selectedLoc.clear">Ethenol Free Fuel</div>
-      <div style="height: 5px"></div>
-      <div class="locAmenRow" *ngIf="selectedLoc.rvdump">RV Dump</div>
-      <div class="locAmenRow" *ngIf="selectedLoc.rvlane">RV Lanes</div>
+      <div class="locAmenList">
+          <div class="locAmenRow" *ngIf="selectedLoc.freal">Freal Shakes</div>
+          <div class="locAmenRow" *ngIf="selectedLoc.slushie">Slushies</div>
+          <div class="locAmenRow" *ngIf="selectedLoc.madbrook">Madbrook Donuts</div>
+          <div class="locAmenRow" *ngIf="selectedLoc.diesel">Diesel Fuel</div>
+          <div class="locAmenRow" *ngIf="selectedLoc.clear">Ethenol Free Fuel</div>
+          <div class="locAmenRow" *ngIf="selectedLoc.rvdump">RV Dump</div>
+          <div class="locAmenRow" *ngIf="selectedLoc.rvlane">RV Lanes</div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="filterPop" #filterPop >
   <div class="amenHdr">
-    <div class="amenTitle">Show only locations that have...</div>
-    <div class="amenClose" style="" (click)="closeFilter()">X</div>
+    <div class="amenTitle">Show only locations with...</div>
   </div>
   <div style="height: 25px"></div>
   <div>
@@ -91,5 +89,8 @@
         <span class="slider round"></span>
       </label>
     </div>
+  </div>
+  <div style="text-align: center" >
+    <button class="amenClose" style="" (click)="closeFilter()">Done</button>
   </div>
 </div>
